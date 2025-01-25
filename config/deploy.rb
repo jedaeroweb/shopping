@@ -1,4 +1,3 @@
-
 set :application, "shopping"
 set :repo_url, "git@github.com:jedaeroweb/shopping.git"
 set :branch, 'master'
@@ -9,17 +8,15 @@ set :deploy_to, '/home/deploy/shopping'
 #set :pty, true
 set :linked_files, %w{config/database.yml config/master.key .env}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/assets public/uploads}
+
 set :rbenv_type, :user
-set :rbenv_ruby, "3.2.2"
-set :ssh_options, paranoid: false
+set :rbenv_ruby, "3.3.4"
+set :ssh_options, verify_host_key: :never
 set :default_env, {'NODE_OPTIONS'=>'--openssl-legacy-provider'}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-set :keep_releases, 2
+set :keep_releases, 5
 
-# Uncomment the following to require manually verifying the host key before first deploy.
-# set :ssh_options, verify_host_key: :secure
-#
 namespace :deploy do
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -41,7 +38,6 @@ namespace :deploy do
     end
   end
 
-  #after :finishing, 'deploy:refresh_sitemap'
+  after :finishing, 'deploy:refresh_sitemap'
   after :finishing, 'deploy:cleanup'
 end
-
