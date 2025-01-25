@@ -39,23 +39,24 @@ gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
+gem "bootsnap", require: false
 gem 'devise'
 gem 'cancancan'
 gem 'kaminari'
 gem 'carrierwave', '~> 2.0'
-gem 'mini_magick'
+gem 'rmagick'
 gem 'sitemap_generator'
 gem 'meta-tags'
 gem 'gretel'
-#
-#gem 'globalize'
-gem 'nokogiri', '>= 1.12.5'
-
+gem 'nokogiri', '>= 1.14.2'
 gem 'impressionist'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem 'acts_as_shopping_cart'
+gem 'acts-as-taggable-on'
+gem 'acts_as_commentable_with_threading'
+gem 'acts_as_votable'
+gem 'globalize'
+
+gem 'sassc-rails'
+gem 'bootstrap', '~> 5.3'
 
 gem 'omniauth'
 gem 'oauth2'
@@ -66,9 +67,10 @@ gem 'omniauth-naver'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-apple'
 gem 'omniauth-twitter'
+gem 'omniauth-github'
 
-gem 'sassc-rails'
-gem 'bootstrap', '~> 5.3'
+gem 'impressionist'
+gem 'acts_as_shopping_cart'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
