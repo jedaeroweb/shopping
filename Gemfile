@@ -69,7 +69,6 @@ gem 'omniauth-apple'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
 
-gem 'impressionist'
 gem 'acts_as_shopping_cart'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
