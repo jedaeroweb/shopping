@@ -99,9 +99,17 @@ GEM
       mutex_m
       securerandom (>= 0.3)
       tzinfo (~> 2.0)
+    acts-as-taggable-on (12.0.0)
+      activerecord (>= 7.1, < 8.1)
+      zeitwerk (>= 2.4, < 3.0)
+    acts_as_commentable_with_threading (2.0.1)
+      activerecord (>= 4.0)
+      activesupport (>= 4.0)
+      awesome_nested_set (>= 3.0)
     acts_as_shopping_cart (0.4.1)
       money-rails (~> 1.5)
       rails (> 4)
+    acts_as_votable (0.14.0)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     aes_key_wrap (1.1.0)
@@ -114,6 +122,8 @@ GEM
       unf
     autoprefixer-rails (10.4.19.0)
       execjs (~> 2)
+    awesome_nested_set (3.8.0)
+      activerecord (>= 4.0.0, < 8.1)
     azure-core (0.1.15)
       faraday (~> 0.9)
       faraday_middleware (~> 0.10)
@@ -162,7 +172,7 @@ GEM
       capistrano (~> 3.1)
     capistrano-passenger (0.2.1)
       capistrano (~> 3.0)
-    capistrano-rails (1.6.3)
+    capistrano-rails (1.7.0)
       capistrano (~> 3.1)
       capistrano-bundler (>= 1.1, < 3)
     capistrano-rbenv (2.2.0)
@@ -185,8 +195,8 @@ GEM
       marcel (~> 1.0.0)
       mini_mime (>= 0.1.3)
       ssrf_filter (~> 1.0)
-    concurrent-ruby (1.3.4)
-    connection_pool (2.4.1)
+    concurrent-ruby (1.3.5)
+    connection_pool (2.5.0)
     crass (1.0.6)
     date (3.4.1)
     debug (1.10.0)
@@ -214,14 +224,7 @@ GEM
       http-cookie (~> 1.0.0)
     faraday_middleware (0.14.0)
       faraday (>= 0.7.4, < 1.0)
-    ffi (1.17.0-aarch64-linux-gnu)
-    ffi (1.17.0-aarch64-linux-musl)
-    ffi (1.17.0-arm-linux-gnu)
-    ffi (1.17.0-arm-linux-musl)
-    ffi (1.17.0-arm64-darwin)
-    ffi (1.17.0-x86_64-darwin)
-    ffi (1.17.0-x86_64-linux-gnu)
-    ffi (1.17.0-x86_64-linux-musl)
+    ffi (1.17.1-x86_64-linux-gnu)
     fog-core (1.43.0)
       builder
       excon (~> 0.49)
@@ -232,6 +235,11 @@ GEM
     formatador (0.3.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    globalize (7.0.0)
+      activemodel (>= 7.0, < 8.1)
+      activerecord (>= 7.0, < 8.1)
+      activesupport (>= 7.0, < 8.1)
+      request_store (~> 1.0)
     gretel (5.0.1)
       actionview (>= 6.1)
       railties (>= 6.1)
@@ -239,7 +247,7 @@ GEM
     http-cookie (1.0.8)
       domain_name (~> 0.5)
     httpclient (2.8.3)
-    i18n (1.14.6)
+    i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     image_processing (1.13.0)
       mini_magick (>= 4.9.5, < 5)
@@ -251,18 +259,13 @@ GEM
     impressionist (2.0.0)
       nokogiri (~> 1)
     io-console (0.8.0)
-    irb (1.14.3)
+    irb (1.15.1)
+      pp (>= 0.6.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    jquery-rails (4.6.0)
-      rails-dom-testing (>= 1, < 3)
-      railties (>= 4.2.0)
-      thor (>= 0.14, < 2.0)
-    jquery-ui-rails (7.0.0)
-      railties (>= 3.2.16)
     json-jwt (1.15.3.1)
       activesupport (>= 4.2)
       aes_key_wrap
@@ -282,8 +285,8 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
-    logger (1.6.4)
-    loofah (2.23.1)
+    logger (1.6.5)
+    loofah (2.24.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -298,7 +301,7 @@ GEM
     mime-types (3.6.0)
       logger
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2024.1203)
+    mime-types-data (3.2025.0107)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (5.25.4)
@@ -327,14 +330,14 @@ GEM
     multipart-post (2.4.1)
     mutex_m (0.3.0)
     mysql2 (0.5.6)
-    net-imap (0.5.4)
+    net-imap (0.5.5)
       date
       net-protocol
     net-pop (0.1.2)
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-scp (4.0.0)
+    net-scp (4.1.0)
       net-ssh (>= 2.6.5, < 8.0.0)
     net-sftp (4.0.0)
       net-ssh (>= 5.0.0, < 8.0.0)
@@ -343,21 +346,7 @@ GEM
     net-ssh (7.3.0)
     netrc (0.11.0)
     nio4r (2.7.4)
-    nokogiri (1.18.0-aarch64-linux-gnu)
-      racc (~> 1.4)
-    nokogiri (1.18.0-aarch64-linux-musl)
-      racc (~> 1.4)
-    nokogiri (1.18.0-arm-linux-gnu)
-      racc (~> 1.4)
-    nokogiri (1.18.0-arm-linux-musl)
-      racc (~> 1.4)
-    nokogiri (1.18.0-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.18.0-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.18.0-x86_64-linux-gnu)
-      racc (~> 1.4)
-    nokogiri (1.18.0-x86_64-linux-musl)
+    nokogiri (1.18.2-x86_64-linux-gnu)
       racc (~> 1.4)
     oauth (1.1.0)
       oauth-tty (~> 1.0, >= 1.0.1)
@@ -372,6 +361,7 @@ GEM
       rack (>= 1.2, < 4)
       snaky_hash (~> 2.0)
       version_gem (~> 1.1)
+    observer (0.1.2)
     omniauth (2.1.2)
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
@@ -382,8 +372,11 @@ GEM
     omniauth-facebook (10.0.0)
       bigdecimal
       omniauth-oauth2 (>= 1.2, < 3)
-    omniauth-google-oauth2 (1.2.0)
-      jwt (>= 2.9)
+    omniauth-github (2.0.1)
+      omniauth (~> 2.0)
+      omniauth-oauth2 (~> 1.8)
+    omniauth-google-oauth2 (1.2.1)
+      jwt (>= 2.9.2)
       oauth2 (~> 2.0)
       omniauth (~> 2.0)
       omniauth-oauth2 (~> 1.8)
@@ -404,8 +397,12 @@ GEM
       rack
     orm_adapter (0.5.0)
     ostruct (0.6.1)
+    pkg-config (1.5.9)
     popper_js (2.11.8)
-    psych (5.2.2)
+    pp (0.6.2)
+      prettyprint
+    prettyprint (0.2.0)
+    psych (5.2.3)
       date
       stringio
     public_suffix (6.0.1)
@@ -417,7 +414,8 @@ GEM
       base64 (>= 0.1.0)
       logger (>= 1.6.0)
       rack (>= 3.0.0, < 4)
-    rack-session (2.0.0)
+    rack-session (2.1.0)
+      base64 (>= 0.1.0)
       rack (>= 3.0.0)
     rack-test (2.2.0)
       rack (>= 1.3)
@@ -463,16 +461,16 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
     rake (13.2.1)
-    rdoc (6.10.0)
+    rdoc (6.11.0)
       psych (>= 4.0.0)
-    recaptcha (5.18.0)
+    recaptcha (5.19.0)
     redis (5.3.0)
       redis-client (>= 0.22.0)
     redis-actionpack (5.5.0)
       actionpack (>= 5)
       redis-rack (>= 2.1.0, < 4)
       redis-store (>= 1.1.0, < 2)
-    redis-client (0.23.0)
+    redis-client (0.23.2)
       connection_pool
     redis-rack (3.0.0)
       rack-session (>= 0.2.0)
@@ -482,6 +480,8 @@ GEM
     regexp_parser (2.10.0)
     reline (0.6.0)
       io-console (~> 0.5)
+    request_store (1.7.0)
+      rack (>= 1.4)
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
@@ -490,10 +490,13 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.4.0)
+    rmagick (6.1.0)
+      observer (~> 0.1)
+      pkg-config (~> 1.4)
     ruby-vips (2.2.2)
       ffi (~> 1.12)
       logger
-    rubyzip (2.3.2)
+    rubyzip (2.4.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -503,7 +506,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
-    selenium-webdriver (4.27.0)
+    selenium-webdriver (4.28.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -521,14 +524,7 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    sqlite3 (2.5.0-aarch64-linux-gnu)
-    sqlite3 (2.5.0-aarch64-linux-musl)
-    sqlite3 (2.5.0-arm-linux-gnu)
-    sqlite3 (2.5.0-arm-linux-musl)
-    sqlite3 (2.5.0-arm64-darwin)
-    sqlite3 (2.5.0-x86_64-darwin)
     sqlite3 (2.5.0-x86_64-linux-gnu)
-    sqlite3 (2.5.0-x86_64-linux-musl)
     sshkit (1.23.2)
       base64
       net-scp (>= 1.1.2)
@@ -538,8 +534,8 @@ GEM
     ssrf_filter (1.2.0)
     stringio (3.1.2)
     thor (1.3.2)
-    tilt (2.5.0)
-    timeliness (0.5.0)
+    tilt (2.6.0)
+    timeliness (0.5.1)
     timeout (0.4.3)
     turbo-rails (2.0.11)
       actionpack (>= 6.0.0)
@@ -558,7 +554,8 @@ GEM
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
     websocket (1.2.11)
-    websocket-driver (0.7.6)
+    websocket-driver (0.7.7)
+      base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
@@ -566,21 +563,15 @@ GEM
     zeitwerk (2.7.1)
 
 PLATFORMS
-  aarch64-linux
-  aarch64-linux-gnu
-  aarch64-linux-musl
-  arm-linux-gnu
-  arm-linux-musl
-  arm64-darwin
-  x86_64-darwin
   x86_64-linux
-  x86_64-linux-gnu
-  x86_64-linux-musl
 
 DEPENDENCIES
+  acts-as-taggable-on
+  acts_as_commentable_with_threading
   acts_as_shopping_cart
+  acts_as_votable
   asset_sync
-  bootsnap (>= 1.4.4)
+  bootsnap
   bootstrap (~> 5.3)
   cancancan
   capistrano
@@ -594,21 +585,20 @@ DEPENDENCIES
   devise
   dotenv-rails
   fog-azure-rm!
+  globalize
   gretel
   importmap-rails
   impressionist
   jbuilder
-  jquery-rails
-  jquery-ui-rails
   kaminari
   meta-tags
-  mini_magick
   mysql2
-  nokogiri (>= 1.12.5)
+  nokogiri (>= 1.14.2)
   oauth2
   omniauth
   omniauth-apple
   omniauth-facebook
+  omniauth-github
   omniauth-google-oauth2
   omniauth-naver
   omniauth-oauth2
@@ -620,6 +610,7 @@ DEPENDENCIES
   recaptcha
   redis (~> 5.0)
   redis-actionpack (~> 5.3)
+  rmagick
   sassc-rails
   selenium-webdriver
   sitemap_generator
