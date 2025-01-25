@@ -16,7 +16,7 @@ set :default_env, {'NODE_OPTIONS'=>'--openssl-legacy-provider'}
 set :bundle_path, '/usr/local/bundle'
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-set :keep_releases, 5
+set :keep_releases, 3
 
 namespace :deploy do
   after :restart, :clear_cache do
