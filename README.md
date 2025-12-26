@@ -1,3 +1,7 @@
+![Rails](https://img.shields.io/badge/Rails-7-red)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Template](https://img.shields.io/badge/Template-Repository-blue)
+
 # What is Jedaeroweb Shopping
 
 Jedaeroweb Shopping is Simple Order Management System(Like Cafe,Store)
@@ -17,10 +21,16 @@ This Application is composed of [Rails](http://rubyonrails.org/)(user-pages,admi
 
 Go Page(Login Use Email:admin@jedaeroweb.co.kr / Password:a12345 ) And Order
 
-## License
+## 📌 Server Requirements
+
+Rails
+ version 7 or newer is recommended.
+
+
+## 📄 License
 
 MIT, All Free
 
-## Author
+## 🤝 Author
 
 [jedaeroweb](https://www.jedaeroweb.co.kr)
